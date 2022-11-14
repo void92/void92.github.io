@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!-- saved from url=(0050)file:///Users/rajeev/Downloads/OpenID_Connect.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<head>
 
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>OpenID_Connect1</title>
+<title>OpenID_Connect</title>
 
 
 <style type="text/css">
@@ -477,47 +476,47 @@ pre[class*="language-"] {
 
 <h3 id="toc_2">OAuth</h3>
 
-<div><pre><code class="language-none">Problem: How can I delegate limited authorization for sharing a resource residing in one application
+<div><pre class=" language-none"><code class=" language-none">Problem: How can I delegate limited authorization for sharing a resource residing in one application
 to an another third party application wihout sharing my credentials with the third party app?
 
 Solution : The OAuth 2.0 Authorization Framework [RFC 6749]</code></pre></div>
 
-<p><img src=/Images/1.png width=100% hieght=100%></p>
+<p><img src="/Images/1.png" width="100%" hieght="100%"></p>
 
 <h3 id="toc_3">OAuth flows</h3>
 
 <ol>
 <li><p><strong>Authorization Code Flow:</strong></p>
 
-<p><img src=/Images/7.png width=100% hieght=80%></p>
+<p><img src="/Images/7.png" width="100%" hieght="80%"></p>
 
 <blockquote>
 <p><strong>Use case:</strong> If the Client is a regular web app executing on a server, then the Authorization Code Flow is the flow you should use</p>
 </blockquote></li>
 <li><p><strong>Implicit Flow:</strong>   </p>
 
-<p><img src=/Images/8.png width=100% hieght=80%></p>
+<p><img src="/Images/8.png" width="100%" hieght="80%"></p>
 
 <blockquote>
-<p><strong>Use case:</strong> If your SPA doesn&#39;t need an Access Token, you can use the Implicit Flow with Form Post.</p>
+<p><strong>Use case:</strong> If your SPA doesn't need an Access Token, you can use the Implicit Flow with Form Post.</p>
 </blockquote></li>
 <li><p><strong>Resource Owner Password Credentials Flow:</strong></p>
 
-<p><img src=/Images/9.png width=100% hieght=80%></p>
+<p><img src="/Images/9.png" width="100%" hieght="80%"></p>
 
 <blockquote>
 <p><strong>Use case:</strong> If the client is absolutely trustworthy  </p>
 </blockquote></li>
 <li><p><strong>Client Credentials Flow:</strong></p>
 
-<p><img src=/Images/11.png width=100% hieght=80%></p>
+<p><img src="/Images/11.png" width="100%" hieght="80%"></p>
 
 <blockquote>
 <p><strong>Use case:</strong> If the party that requires access to resources is a machine. In the case of machine-to-machine authorization, the Client is also the Resource Owner, so no end-user authorization is needed</p>
 </blockquote></li>
 <li><p><strong>Refresh Token Flow:</strong></p>
 
-<p><img src=/Images/10.png width=100% hieght=80%></p>
+<p><img src="/Images/10.png" width="100%" hieght="80%"></p>
 
 <blockquote>
 <p><strong>Use cases:</strong> </p>
@@ -531,33 +530,33 @@ Solution : The OAuth 2.0 Authorization Framework [RFC 6749]</code></pre></div>
 
 <p><strong>Important Note:</strong> You can find request and response structures of authorisation and token endpoints(with required and optional parameters) <a href="https://darutk.medium.com/diagrams-and-movies-of-all-the-oauth-2-0-flows-194f3c3ade85">here</a></p>
 
-<p><strong><em>Eg:</em></strong> <img src=/Images/12.png width=100% hieght=80%></p>
+<p><strong><em>Eg:</em></strong> <img src="/Images/12.png" width="100%" hieght="80%"></p>
 
 <p><strong>Note:</strong> RFC 6749 (OAuth 2.0) includes the definition of a Web API called “authorization endpoint”. The API requires <strong><em>response_type</em></strong> as a mandatory request parameter.</p>
 
 <h2 id="toc_4">Open ID</h2>
 
-<div><pre><code class="language-none">Issue: OAuth is specifically designed for authorisation (permissions and scope of permissions not for 
+<div><pre class=" language-none"><code class=" language-none">Issue: OAuth is specifically designed for authorisation (permissions and scope of permissions not for 
 user info validation), but web applications adopted it widely for authentication by implementing few 
-custom criterias on top of oAuth. There is no interoperability (No standard way to get the user info).
+custom criterias on top of oAuth. There is no interoperability (No standard way to get the user info). 
 
 Solution: OpenID Connect - a simple identity layer on top of the OAuth 2.0 protocol</code></pre></div>
 
-<p><img src=/Images/2.png width=70% hieght=50%><br>
-<img src=/Images/5.png width=70% hieght=50%></p>
+<p><img src="/Images/2.png" width="70%" hieght="50%"><br>
+<img src="/Images/5.png" width="70%" hieght="50%"></p>
 
 <hr>
 
-<p><img src=/Images/3.png width=70% hieght=50%></p>
+<p><img src="/Images/3.png" width="70%" hieght="50%"></p>
 
 <hr>
 
-<p><img src=/Images/4.png width=100% hieght=50%>
-<img src=/Images/6.png width=70% hieght=50%></p>
+<p><img src="/Images/4.png" width="100%" hieght="50%">
+<img src="/Images/6.png" width="70%" hieght="50%"></p>
 
 <h3 id="toc_5">OpenID Connect Flows</h3>
 
-<div><pre><code class="language-none">In RFC 6749, the value of response_type is either code or token. OpenID Connect has added a new value, 
+<div><pre class=" language-none"><code class=" language-none">In RFC 6749, the value of response_type is either code or token. OpenID Connect has added a new value, 
 id_token, and allowed any combination of code, token and id_token. A special value, none, has been 
 added, too. As a result, now *response_type* can take any one of the following values:
 
@@ -572,7 +571,7 @@ added, too. As a result, now *response_type* can take any one of the following v
 
 Note that a request for an ID token has to include openid in the scope request parameter. Especially, 
 if openid is not included in scope, the case of response_type=code is regarded as the original 
-authorization code flow defined in RFC 6749 and an ID token won&#39;t be issued. The same is true 
+authorization code flow defined in RFC 6749 and an ID token won't be issued. The same is true 
 of the case of response_type=code token, too.</code></pre></div>
 
 <p><strong>Eg: If response_type=code:</strong><br>
@@ -580,11 +579,38 @@ of the case of response_type=code token, too.</code></pre></div>
 
 <p>if openid is included,</p>
 
-<p><img src=/Images/13.webp width=100% hieght=50%></p>
+<p><img src="/Images/13.webp" width="100%" hieght="50%"></p>
 
-<p><img src=/Images/14.webp width=100% hieght=50%></p>
+<p><img src="/Images/14.webp" width="100%" hieght="50%"></p>
 
 <p><strong>Important Note:</strong> You can find OpenID Connect flows for different OAuth flows <a href="https://darutk.medium.com/diagrams-of-all-the-openid-connect-flows-6968e3990660">here</a></p>
+
+<h2 id="toc_6">Single SignOn (SSO) &amp; Federated Identity Management(FIM)</h2>
+
+<p><strong>Single sign-on(SSO)</strong> solutions provide a single access point to multiple applications within a <strong><em>single domain</em></strong>, usually an enterprise network</p>
+
+<p><img src="/Images/16.png" width="100%" hieght="50%">
+<img src="/Images/18.png" width="100%" hieght="50%"></p>
+
+<blockquote>
+<p><strong>Note:</strong> This is a way to share identity cross-origin securely as the browsers enforce same origin policy by default</p>
+</blockquote>
+
+<p><strong>FIM</strong> provides access to applications across <strong><em>multiple domains</em></strong> or organizations with a single set of credentials</p>
+
+<p><img src="/Images/15.webp" width="100%" hieght="50%"></p>
+
+<blockquote>
+<p><strong>Identity Provider</strong> - The Identity Provider authenticates the user and provides an authentication token (that is, information that verifies the authenticity of the user) to the service provider.</p>
+
+<p><strong>Service Provider</strong> - Typically, service providers do not authenticate users but instead request authentication decisions from an identity provider. Service providers rely on identity providers to assert the identity of a user and certain attributes about the user that are managed by the identity provider.The OpenID protocol specification uses the term Consumer to describe the service provider role.</p>
+</blockquote>
+
+<p><strong>Open ID Connect standard can be used to create Identity Providers:</strong></p>
+
+<p><img src="/Images/17.png" width="100%" hieght="50%"></p>
+
+<p><strong>SAML:</strong> An XML-based open standard for exchanging authentication and authorization data between identity provider and service provider</p>
 
 
 
@@ -593,6 +619,7 @@ var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScop
 </script>
 
 
-</body>
 
-</html>
+
+
+</body></html>
